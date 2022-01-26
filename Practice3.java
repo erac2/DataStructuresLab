@@ -1,4 +1,3 @@
-
 public class Practice3 {
 
 	public static int square(int num)
