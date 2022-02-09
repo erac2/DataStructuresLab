@@ -1,22 +1,19 @@
-package Day4;
-
-import java.util.Arrays;
+package Day5;
 
 public class Main11 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int [] source = {1, 2, 3, 4, 5, 6};
-		int [] destination = new int[6];
+		//create an object of Rectangle
+		Rectangle r1 = new Rectangle();
+		r1.getArea();
+		r1.getSides();
 		
-		//iterate and copy elements from source to destination
-		for(int i = 0; i<source.length; ++i) {
-			destination[i] = source[i];
-		}
-		
-		//converting array to string
-		System.out.println(Arrays.toString(destination));
+		//create an object of Square
+		Square s1 = new Square();
+		s1.getArea();
+		s1.getSides();
 	}
 
 }
