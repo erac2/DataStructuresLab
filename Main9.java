@@ -1,16 +1,11 @@
-package Day4;
+package Day6;
 
 public class Main9 {
 
-	public static void main(String[]args) {
-		int [] age = {12, 4, 5};
-		
-		//loop through the array
-		//using for loop
-		
-		System.out.println("Using for-each Loop:");
-		for(int a:age) {
-			System.out.println(a);
-		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListOfNumbers2 list = new ListOfNumbers2();
+		list.writeList();
 	}
+
 }

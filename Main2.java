@@ -1,53 +1,21 @@
+package Day6;
 
-class Animal {
+public class Main2 {
 
-	Animal()
+	public static void main(String[]args)
 	{
-		System.out.println("I am an animal");
-	}
+		try {
 
-	//parameterized constructor
-	Animal(String type){
-		System.out.println("Type: " + type);
+			//code that generate exception
+			int divideByZero = 5/0;
+			System.out.println("Rest of code in try block");
+		}
+
+		catch (ArithmeticException e) {
+			System.out.println("ArithmeticException => " + e.getMessage());
+		}
+		finally {
+			System.out.println("This is the finally block");
+		}
 	}
 }
-
-//Dog inherit from Animal
-class Dog extends Animal {
-
-	//default constructor
-	Dog(){
-
-		//calling parameterized constructor of the superclass
-		super("Animal");	
-
-		System.out.println("I am a dog");
-	}
-
-	//new method in subclass
-
-	public void bark()
-	{
-		System.out.println("I can bark");
-	}
-}
-
-class Main2{
-	public static void main(String []args)
-	{
-		Dog dog1 = new Dog();
-	/**	Dog labrador = new Dog();
-
-		//call method of superclass
-		//using object of subclass
-		labrador.eat();
-		labrador.bark();*/
-
-	}
-}
-
-
-
-
-
-

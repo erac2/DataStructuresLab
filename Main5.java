@@ -1,8 +1,24 @@
-package Day3;
-
+package Day6;
+import java.io.*;
 public class Main5 {
-	public static void main(String[] args) {
-		Rectangle r1 = new Rectangle();
-		r1.getArea(5, 6);
+
+	//declaring the type of exception
+	public static void findFile() throws IOException {
+
+		//code that may generate IOException
+		File newFile = new File("test.txt");
+		FileInputStream stream = new FileInputStream(newFile);
 	}
+	public static void main(String[] args) {
+
+		try {
+			findFile();
+			}
+		
+		catch(IOException e) {
+			System.out.println(e);
+		}
+		}
+	
+
 }
