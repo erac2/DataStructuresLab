@@ -1,21 +1,22 @@
 package Day7;
+
 import java.io.*;
 
-public class Main {
+public class Main22 {
 
 	public static void findFile() throws IOException{
-		//code that may produce IOException
-		File newFile = new File("test.txt");
-		FileInputStream stream = new FileInputStream(newFile);
+		throw new IOException("File not found");
 	}
+	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		try {
 			findFile();
-		} catch (IOException e) {
-			System.out.println(e);
+			System.out.println("Rest of codein try block");
+		}catch (IOException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
