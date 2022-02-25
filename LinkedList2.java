@@ -1,124 +1,40 @@
-package Day9;
-
+package Day10;
+import java.util.*;
 public class LinkedList2 {
-	Node head;
 
-	static class Node{
-		int data;
-		Node next;
-
-		Node(int d){
-			data = d;
-			next = null;
-		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList<String>ll = new LinkedList<String>();
+		
+		System.out.println("Initial list of elements: " + ll);
+		ll.add("Ravi");
+		ll.add("Vijay");
+		ll.add("Ajay");
+		System.out.println("After invoking add(E e)method: " + ll);
+		//Adding an element at the specific position
+		ll.add(1, "Gaurav");
+		System.out.println("After invoking add(int index, E element) method" + ll);
+		LinkedList<String>ll2 = new LinkedList<String>();
+		ll2.add("Sonoo");
+		ll2.add("Hanumat");
+		
+		//Adding second list elements to the first list
+		ll.addAll(ll2);
+		System.out.println("After invoking addAll(Collection<?extends E>c) method: " + ll);
+		LinkedList<String>ll3 = new LinkedList<String>();
+		
+		ll3.add("John");
+		ll3.add("Rahul");
+		//Adding second list elements to the first list at specific position
+		ll.addAll(1, ll3);
+		System.out.println("After invoking addAll(int index, Collection<? extends E>c) method: " + ll);
+		
+		//Adding an alement at the first position
+		ll.addFirst("Lokesh");
+		System.out.println("After invoking addFirst(E e) method: " + ll);
+		//Adding an element at the last position
+		ll.addLast("Harsh");
+		System.out.println("After onvoking addLast(E e) method: " + ll);
 	}
 
-	//Insert at the beginning
-	public void insertAtBeginning(int new_data) {
-		//insert the data
-		Node new_node = new Node(new_data);
-		new_node.next = head;
-		head = new_node;
-	}
-
-	public void insertAfter(Node prev_node, int new_data) {
-		if(prev_node == null) {
-			System.out.println("The given previous node cannot be null");
-			return;
-		}
-		Node new_node = new Node(new_data);
-		new_node.next = prev_node.next;
-		prev_node.next = new_node;
-	}
-
-	//Insert at the end
-	public void insertAtEnd(int new_data) {
-		Node new_node = new Node(new_data);
-
-		if(head == null) {
-			head = new Node(new_data);
-			return;
-		}
-
-		new_node.next = null;
-
-		Node last = head;
-		while(last.next != null)
-			last = last.next;
-
-		last.next = new_node;
-		return;
-	}
-	
-	// Delete a node
-	void deleteNode(int position) {
-		if (head == null)
-			return;
-
-		Node temp = head;
-
-		if (position == 0) {
-			head = temp.next;
-			return;
-		}
-		// Find the key to be deleted
-		for (int i = 0; temp != null && i < position - 1; i++)
-			temp = temp.next;
-
-		// If the key is not present
-		if (temp == null || temp.next == null)
-			return;
-
-		// Remove the node
-		Node next = temp.next.next;
-
-		temp.next = next;
-	}
-
-	// Search a node
-	boolean search(Node head, int key) {
-		Node current = head;
-		while (current != null) {
-			if (current.data == key)
-				return true;
-			current = current.next;
-		}
-		return false;
-	}
-
-	// Sort the linked list
-	void sortLinkedList(Node head) {
-		Node current = head;
-		Node index = null;
-		int temp;
-
-		if (head == null) {
-			return;
-		} else {
-			while (current != null) {
-				// index points to the node next to current
-				index = current.next;
-
-				while (index != null) {
-					if (current.data > index.data) {
-						temp = current.data;
-						current.data = index.data;
-						index.data = temp;
-					}
-					index = index.next;
-				}
-				current = current.next;
-			}
-		}
-	}
-
-	// Print the linked list
-	public void printList() {
-		Node tnode = head;
-		while (tnode != null) {
-			System.out.print(tnode.data + " ");
-			tnode = tnode.next;
-		}
-
-	}
 }
