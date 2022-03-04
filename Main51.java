@@ -1,19 +1,19 @@
 package Day12;
 
 import java.util.Queue;
-import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 
-public class Main50 {
+public class Main51 {
 
 	public static void main(String[]args) {
 		//Creating Queue using the linkedList ckass
-		Queue<Integer> numbers = new LinkedList<>();
+		Queue<Integer> numbers = new PriorityQueue<>();
 		
 		//offer elements to the Queue
+		numbers.offer(5);
 		numbers.offer(1);
 		numbers.offer(2);
-		numbers.offer(3);
 		System.out.println("Queue: " + numbers);
 		
 		//Access elements of the Queue
