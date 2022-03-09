@@ -9,7 +9,7 @@ public class Book {
 	String title;
 	BookTypes bookType;
 
-	public void book(int pages, double price, String title, BookTypes bookType) {
+	public Book(int pages, double price, String title, BookTypes bookType) {
 		this.pages = pages;
 		this.price = price;
 		this.title = title;
@@ -30,5 +30,12 @@ public class Book {
 	
 	public BookTypes bookType(BookTypes bookType) {
 		return this.bookType = bookType;
+	}
+	
+	public String toString() {
+		return "Title: " + title + "\n"
+				+ "Pages: " + pages + "\n"
+				+ "Price: $" + price + "\n"
+				+ "Book Type: " + bookType;
 	}
 }
