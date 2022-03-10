@@ -1,5 +1,5 @@
 package edu.monmouth.book;
-import java.lang.Exception;
+import edu.monmouth.book.*;
 
 import edu.monmouth.hw2.BookTypes;
 
@@ -22,26 +22,34 @@ public class Book {
 	}
 	
 	public void setPages(int pages){
+
 		this.pages = pages;
-		if(pages <= 0) {
-			System.out.println("")
-		}
-		}
+		if(pages<=0) {
+			System.out.println("Invalid Number of Pages");
+			}
+			}
+		
 	
 	public double price() {
 		return price;
 	}
 	
-	public double setPrice(double price) throws BookException {
+	public void setPrice(double price) {
 		this.price = price;
+		if(price<0) {
+			System.out.println("Invalid Price");
+		}
 	}
 	
 	public String title(String title) {
 		return title;
 	}
 	
-	public void setTitle(String title) {
+	public void setTitle(String title) throws BookException{
 		this.title = title;
+		if(title.length() == 0 || title==null) {
+			System.out.println("Invalid Title Name");
+		}
 	}
 	
 	public BookTypes bookType() {
@@ -57,4 +65,4 @@ public class Book {
 				+ "Pages: " + pages + "\n"
 				+ "Price: $" + price + "\n"
 				+ "Book Type: " + bookType;
-	}
+	}}

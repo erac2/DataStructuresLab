@@ -5,6 +5,7 @@ public class ListNode {
 
 	private Node head;
 	private Book b;
+	private int countSize;
 
 	public ListNode() {
 		head = null;
@@ -24,31 +25,51 @@ public class ListNode {
 
 	public Node last() {
 		/* placeholder */
-		while(head.next != null) {
-			
+		while(head == null) {
+			return null;
 		}
-		return null;
+		Node booky = head;
+		while(booky.getNext()!=null) {
+			booky = booky.getNext();
+		}
+		return booky;
 	}
 
 	public void insert(Book B) {
-		Node newNode = new Node(element);
+		Node newNode = new Node(B);
 		newNode.setNext(head);
 		head = newNode;
+		countSize++;
+
 	}
 
-	public void insertEnd(String element) {
+	public void insertEnd(Book B) {
 		/* placeholder */
-		return; 
+		if(head == null) {
+			return;
+		}
+		Node newNode = new Node(B);
+		Node booky = head;
+		while(booky.getNext()!=null) {
+			booky = booky.getNext();
+		}
+		booky.setNext(newNode);
+		countSize++;
+
 	}
 
 	public boolean isEmpty() { 
-		/* placeholder */
+		if(head == null) {
 		return true;              
 	}
+		else {
+			return false;
+		}
+		}
 
 	public int size() {
 		/* placeholder */
-		return 0;
+		return countSize;
 	}
 
 	public void clear() {

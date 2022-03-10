@@ -7,6 +7,7 @@ public class Node
 	/* change this attribute to store a reference to a Book */
 //	private String info;
 	private Book Book; 
+	private String info;
 	private Node next;
 
 	/* change this constructor so it accepts a reference to a Book */
