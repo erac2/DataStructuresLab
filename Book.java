@@ -1,4 +1,5 @@
 package edu.monmouth.book;
+import java.lang.Exception;
 
 import edu.monmouth.hw2.BookTypes;
 
@@ -17,19 +18,38 @@ public class Book {
 	}
 	
 	public int pages(int pages) {
-		return this.pages = pages;
+		return pages;
 	}
 	
-	public double price(double price) {
-		return this.price = price;
+	public void setPages(int pages){
+		this.pages = pages;
+		if(pages <= 0) {
+			System.out.println("")
+		}
+		}
+	
+	public double price() {
+		return price;
+	}
+	
+	public double setPrice(double price) throws BookException {
+		this.price = price;
 	}
 	
 	public String title(String title) {
-		return this.title = title;
+		return title;
 	}
 	
-	public BookTypes bookType(BookTypes bookType) {
-		return this.bookType = bookType;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public BookTypes bookType() {
+		return bookType;
+	}
+	
+	public void setBookType(BookTypes bookType) {
+		this.bookType = bookType;
 	}
 	
 	public String toString() {
@@ -38,4 +58,3 @@ public class Book {
 				+ "Price: $" + price + "\n"
 				+ "Book Type: " + bookType;
 	}
-}
