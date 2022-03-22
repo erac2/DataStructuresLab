@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.util.Properties;
+
 
 public class HW3 {
 
@@ -16,15 +18,12 @@ public class HW3 {
 
 		ArrayList<String> strings = new ArrayList<String>();
 		LinkedList<String> str = new LinkedList<String>();
-		
-		final Reader LOGFILENAME = HW3Constants.STRINGS;
-		
+
+		final String LOGFILENAME = HW3Constants.STRINGS;
+		Properties properties = new Properties();
+
 		try {
-			BufferedReader st = new BufferedReader(LOGFILENAME);
-			System.setOut(st);
-			System.setErr(st);
-			FileReader read = new FileReader(LOGFILENAME);
-			String eachLine = LOGFILENAME.read();
+			properties.load(new FileInputStream(LOGFILENAME));
 		} catch (FileNotFoundException e) {
 			System.err.println("Cannot find the file " + e);
 			System.exit(-1);
@@ -32,8 +31,37 @@ public class HW3 {
 			System.err.println("Cannot open the file " + e);
 			System.exit(-1);
 		}
+
+		properties.list(System.out);
+		String lines = properties.getProperty(LOGFILENAME);
+		while(lines!=null) {
+			strings.add(lines);
+		}
+
+		properties.list(System.out);
+		String lines2 = properties.getProperty(LOGFILENAME);
+		while(lines2!=null) {
+			str.add(lines2);
+			System.exit(-1);
+		}
+
+		System.out.println(strings);
+		System.out.println(str);
+
+
+		//Books Part
 		
+		ArrayList<Book> books = new ArrayList<Book>();
+		LinkedList<Book> books2 = new LinkedList<Book>();
+
 		
+	/*	final String BOOKFILE = HW3Constants.BOOKS;
+		
+		try {
+			
+		}**/
 	}
 
 }
+
+
