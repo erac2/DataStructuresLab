@@ -1,6 +1,6 @@
-package edu.monmouth.edu;
+package edu.monmouth.book;
 
 public enum bookType {
 
-	HARDBACK, SOFTBACK, ELECTRIC;
+	HARDBACK, SOFTBACK, ELECTRONIC;
 }

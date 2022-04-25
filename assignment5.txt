@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.NullPointerException: Cannot read field "leftChild" because "current" is null
+	at edu.monmouth.tree.Tree.min(Tree.java:9)
+	at edu.monmouth.tree.TreeApp.main(TreeApp.java:61)

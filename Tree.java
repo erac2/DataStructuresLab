@@ -6,24 +6,42 @@ class Tree{
    public Node min() {
 	   // traverse tree to find node with minimum value
 	   Node current = root;
+	   while(current.leftChild != null) {
+		   current = current.leftChild;
+	   }
 	   return current;
    }
    
    public Node max() { 
 	   // traverse tree to find node with maximum value
 	   Node current = root;
+	   while(current.rightChild != null) {
+		   current = current.rightChild;
+	   }
 	   return current;
+
    }
    
    public Node find(int key) {        
       Node current = root;               // start at root
-      boolean yes = false;
-      while(yes) {
-     
-    	  return current;
+
+      if(current == null) {
+    	  return null;
+      }
       
-      }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-      } 
+      while(current != null) {
+    	  if(key == current.getkey()) {
+    		  break;
+    	  }
+    	  if(key > current.getkey()) {
+    		  current = current.rightChild;
+    	  }
+    	  if(key < current.getkey()) {
+    		  current = current.leftChild;
+    	  }
+      }
+      return current;
+      }
    
    public void insert(int key, double value) {
       Node newNode = new Node(key, value);    // make new node
